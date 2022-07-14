@@ -1,29 +1,21 @@
 import type { AppProps } from 'next/app'
-import { createGlobalStyle} from 'styled-components'
-import "@fontsource/open-sans";
-import { CartProdiver } from '../context/CartContext';
+import { ThemeProvider } from 'styled-components';
+import { CartProdiver } from '../context/Cart/CartContext';
+import { ProductProvider } from '../context/Products/ProductProvider';
+import { GlobalStyles, Theme } from '../theme';
 
-const GlobalStyles = createGlobalStyle`
-
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    outline: none !important;
-    text-decoration: none;
-    list-style: none !important;
-    font-family: Open Sans !important; 
-  }
-  
-`
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyles />
-      <CartProdiver>
-        <Component {...pageProps} />
-      </CartProdiver>
+      <ProductProvider>
+        <CartProdiver>
+          <ThemeProvider theme={Theme}>
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </CartProdiver>
+      </ProductProvider>
 
     </>
   )

@@ -8,11 +8,12 @@ import { BsChevronLeft, BsChevronRight } from "react-icons/bs"
 
 export const ProductList = () => {
     const Product = useContext(ProductContext)
-    const list = useRef(null)
+    const list: any = useRef(null)
  
     const handleControl = (side: string) => {
         
         if(list.current){
+            if(list.current)
             side === 'left' ? list.current.scrollLeft -= list.current.offsetWidth : list.current.scrollLeft += list.current.offsetWidth
         }
 

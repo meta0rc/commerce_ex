@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Body, Button, Container, Heading, Subheading } from '../ui'
+import { Body, Button, Container, Heading } from '../ui'
 
 const SliderConter = styled(Container)`
     img {

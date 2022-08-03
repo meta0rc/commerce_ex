@@ -2,7 +2,6 @@ import Router from "next/router"
 import { useContext, useState } from "react"
 import { BsHandbag } from "react-icons/bs"
 import { VscClose } from "react-icons/vsc"
-import { configs } from "../../configs/config"
 import { CartContext } from "../../context/Cart/CartContext"
 import { Body, Button } from "../ui"
 import { 

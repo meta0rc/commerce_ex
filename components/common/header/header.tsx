@@ -1,5 +1,5 @@
 import { Logo } from "../logo/logo"
-import { BsCart, BsHeart } from 'react-icons/bs'
+import { BsHeart } from 'react-icons/bs'
 import { Cart } from "../../cart/cart"
 import { Container, ContainerNavIcons, ContainerNavLeft, List, ListItem, Link } from './style'
 export const Header = () => {

@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { BsPlus, BsDash } from "react-icons/bs"
 import { CartContext } from "../../../context/Cart/CartContext"
-import { Body, Heading } from "../../ui"
+import { Heading } from "../../ui"
 import { 
     ProductsCheckout, 
     ProductsListCheckout, 

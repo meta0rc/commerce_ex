@@ -36,7 +36,7 @@ export const Cart = () => {
                     <CartList onMouseLeave={() => setShowCart(false)}>
                     { cart.products && cart.products.map((product: any, i) => {
                         return (
-                            <ListItemCart>
+                            <ListItemCart key={product?.name} >
                                 <ProductContainer>
                                     <ContainerCart>
                                         <ProductImage src={product?.image} width={50} height={50}/>

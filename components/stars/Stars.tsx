@@ -13,10 +13,10 @@ export const Stars = (props: star) => {
         return (
             <Container display="flex">
                 {[...Array(quanty)].map((s, i) => {
-                    return <BsStarFill color="gold" style={{margin: '0 2px'}}/>
+                    return <BsStarFill color="gold" style={{margin: '0 2px'}} key={'stargold' + i}/>
                 })}
                 {[...Array(cond)].map((s, i) => {
-                    return <BsStarFill color="gray" style={{margin: '0 2px'}}/>
+                    return <BsStarFill color="gray" style={{margin: '0 2px'}} key={'stargray' + i}/>
                 })}
             </Container>
           

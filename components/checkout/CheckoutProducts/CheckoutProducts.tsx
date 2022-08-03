@@ -28,7 +28,7 @@ export const CheckoutProducts = () => {
                 { Products && Products.map(product => {
                     return (
                         
-                    <ListItemCheckout>
+                    <ListItemCheckout key={product?.name}>
                         <ImageCheckout src={product?.image} alt={'Image checkout'}/>
                         <ContentCheckout>
                             <Heading level={2} size={'small'} color={'dark'}>

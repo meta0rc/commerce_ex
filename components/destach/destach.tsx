@@ -20,7 +20,7 @@ export const Destach = () => {
         <>
         {destachs.map(destach => {
             return (
-                <ContainerDestach>
+                <ContainerDestach key={destach.name}>
                 { !destach.right && (
                     <DesktopContainer w={'50%'}>
                         <ImageDestach src={destach.image} />
@@ -46,7 +46,7 @@ export const Destach = () => {
                         </Heading>
                         {destach.technicalDetails && Object.keys(destach.technicalDetails).map((key, value) => {
                             return (
-                                <ListItemDetails>
+                                <ListItemDetails key={'Details' + value}>
                                     <strong> { key } </strong> : {Object.values(destach.technicalDetails)[value]}
                                 </ListItemDetails>
                             )

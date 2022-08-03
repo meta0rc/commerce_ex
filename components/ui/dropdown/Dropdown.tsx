@@ -41,7 +41,7 @@ export const DropDdown = (props: DropType) => {
                 <List>
                     {[...Array(Product.product?.quanty)].map((item, index) => {
                         return (
-                            <ListItem onClick={() => HandleSelect(index + 1)}>
+                            <ListItem onClick={() => HandleSelect(index + 1)} key={'list-item-' + index}>
                                 {index + 1} unidade{index > 0 && 's'}
                             </ListItem>
                             )

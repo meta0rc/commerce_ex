@@ -5,7 +5,7 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 padding: 20px;
-box-shadow: 0 0 3px #ccc;
+
 li { 
     margin: 0 5px;
 }

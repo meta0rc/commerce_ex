@@ -1,5 +1,5 @@
 import { Container } from "../ui"
-import { FaStar } from 'react-icons/fa'
+import { BsStarFill } from 'react-icons/bs'
 
 type star = { 
     quanty?: number,
@@ -13,10 +13,10 @@ export const Stars = (props: star) => {
         return (
             <Container display="flex">
                 {[...Array(quanty)].map((s, i) => {
-                    return <FaStar color="gold" />
+                    return <BsStarFill color="gold" style={{margin: '0 2px'}}/>
                 })}
                 {[...Array(cond)].map((s, i) => {
-                    return <FaStar color="gray" />
+                    return <BsStarFill color="gray" style={{margin: '0 2px'}}/>
                 })}
             </Container>
           

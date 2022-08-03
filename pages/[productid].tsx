@@ -1,21 +1,17 @@
 import { GetStaticPaths, GetStaticProps } from "next"
-import { FunctionComponent } from "react"
-import Stripe from 'stripe'
-import { keys } from "../configs/Stripe"
+import { FunctionComponent, useContext, useEffect } from "react"
+import { Header } from "../components/common/header/header"
+import { ProductPage } from "../components/products/productPage/productPage"
+import { ProductContext, ProductType } from "../context/Products/ProductContext"
+import { Products } from "../data/Products"
 
-interface Product { 
-    products: Stripe.Product
-    price: Stripe.Price
-    paymentLink: Stripe.PaymentLink
+interface Product {
+    Product: ProductType
 }
 export const getStaticPaths: GetStaticPaths = async () => {
-    const stripe = new Stripe(keys.secret, {
-        apiVersion: "2020-08-27"
-    })
-    const products = await stripe.products.list()
-    const paths = products.data.map((pro) => ({
+    const paths = Products.map((product) => ({
         params: {
-            productid: pro.id
+            productid: String(product.id)
         }
     }))
     return { 
@@ -24,51 +20,38 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params} ) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
 
-    const stripe = new Stripe(keys.secret, {
-        apiVersion: "2020-08-27"
-    })
-    const products = await stripe.products.retrieve(params?.productid as string)
-    const {default_price } = products
-    const price = await stripe.prices.retrieve(default_price as string)
-
-    const paymentLink = await stripe.paymentLinks.create({
-        line_items: [{price: default_price as string, quantity: 1}],
-        after_completion: {type: 'redirect', redirect: {url: 'http://localhost/success'}},
-      });
+    const Product = Products.filter(product => product.id === Number(params?.productid))
     return { 
         props: {
-            products,
-            price,
-            paymentLink
+            Product: Product[0]
         }
     }
 }
 
-const Product: FunctionComponent<Product> = ( { products, price, paymentLink} ) => {
-    
-    const { name, images } = products
-    const { unit_amount } = price
-    
+const Product: FunctionComponent<Product> = (props) => {
+
+    const context = useContext(ProductContext)
+    useEffect(() => {
+        context.showModalProduct(props.Product)
+    }, [])
+
+    const { id, name, price, image, description, rate, quanty} = props.Product
     return (
-        <>
-            <h1>
-                {name ? name : 'Product'}
-            </h1>
-            <img src={images[0]} />
-            <h1>
-                {unit_amount ? unit_amount : 'gratis'}
-            </h1>
-            <button>
-                <a href={paymentLink.url}>
-                    Comprar agora
-                </a>
-            </button>
+        <>  
+            <Header />
+            <ProductPage 
+                id={id} 
+                name={name} 
+                price={price} 
+                image={context.imageProduct ? context.imageProduct : image }
+                description={description}
+                rate={rate}
+                quanty={quanty}
+                />
         </>
     )
-
-
 }
 
 export default Product

@@ -36,6 +36,9 @@ export const ShowProduct = styled(Container)`
     p {
         margin: 10px 0;
     }
+    button {
+        margin-right: 5px;
+    }
     ${ProductImage} { 
         width: 70%;
     }
@@ -88,6 +91,7 @@ export const ListPrice = styled(Container)`
 `
 export const ContainerStars = styled(Container)`
     margin: 10px 0;
+    align-items: center;
     @media (max-width: 500px) {
         justify-content: center;
     }

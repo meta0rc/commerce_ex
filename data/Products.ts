@@ -11,7 +11,8 @@ export const Products = [
         ],
         description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus exercitationem maxime voluptatum at incidunt ullam deleniti autem, facere ipsum. Saepe nisi labore, fugiat atque possimus vitae deleniti iusto libero? Porro."',
         rate: 4,
-        quanty: 5
+        quanty: 5,
+        list: true
     },
     {
         id: 2,
@@ -23,7 +24,8 @@ export const Products = [
         ],
         description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus exercitationem maxime voluptatum at incidunt ullam deleniti autem, facere ipsum. Saepe nisi labore, fugiat atque possimus vitae deleniti iusto libero? Porro."',
         rate: 5,
-        quanty: 3
+        quanty: 3,
+        list: true
         
     },
     {
@@ -36,22 +38,10 @@ export const Products = [
         ],
         description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus exercitationem maxime voluptatum at incidunt ullam deleniti autem, facere ipsum. Saepe nisi labore, fugiat atque possimus vitae deleniti iusto libero? Porro."',
         rate: 5,
-        quanty: 7
+        quanty: 7,
+        list: true
         
     },
-    {
-        id: 4,
-        name: 'Perifericos',
-        price: 69.99,
-        image: 'images/perfiericos.png',
-        galery: [
-            'images/perfiericos2.png'
-        ],
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus exercitationem maxime voluptatum at incidunt ullam deleniti autem, facere ipsum. Saepe nisi labore, fugiat atque possimus vitae deleniti iusto libero? Porro."',
-        rate: 5,
-        quanty: 15
-    },
-
     {
         id: 4,
         name: 'Perifericos 2',
@@ -62,7 +52,66 @@ export const Products = [
         ],
         description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus exercitationem maxime voluptatum at incidunt ullam deleniti autem, facere ipsum. Saepe nisi labore, fugiat atque possimus vitae deleniti iusto libero? Porro."',
         rate: 5,
-        quanty: 2
-    }
+        quanty: 2,
+        list: true
+    },
+    {
+        id: 5,
+        name: 'Fone de Ouvido TWS W100T, Bluetooth, Resistente à Respingos, Branco',
+        price: 69.99,
+        image: 'images/destach1.jpg',
+        galery: [
+            'images/perfiericos2.png'
+        ],
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus exercitationem maxime voluptatum at incidunt ullam deleniti autem, facere ipsum. Saepe nisi labore, fugiat atque possimus vitae deleniti iusto libero? Porro."',
+        rate: 5,
+        quanty: 2,
+        destach: true,
+        technicalDetails: {
+            marca: 'TWS w100T',
+            modelo: 'Modelo: W100T-BK',
+            porta: 'USB type C',
+            carg: 'cerca 7 horas (fones de ouvido) + 21 horas (Estojo de carregamento)'
+        }
+    },
+    {
+        id: 6,
+        name: 'Oculus Quest 2 Realidade Virtual 128gb 6gb Ram Branco',
+        price: 69.99,
+        image: 'images/destach2.jpg',
+        galery: [
+            'images/perfiericos2.png'
+        ],
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus exercitationem maxime voluptatum at incidunt ullam deleniti autem, facere ipsum. Saepe nisi labore, fugiat atque possimus vitae deleniti iusto libero? Porro."',
+        rate: 5,
+        quanty: 2,
+        destach: true,
+        right: true,
+        technicalDetails: {
+            marca: 'TWS w100T',
+            modelo: 'Modelo: W100T-BK',
+            porta: 'USB type C',
+            carg: 'cerca 7 horas (fones de ouvido) + 21 horas (Estojo de carregamento)'
+        }
+    },
+    {
+        id: 7,
+        name: 'Perifericos 2',
+        price: 69.99,
+        image: 'images/destach3.png',
+        galery: [
+            'images/perfiericos2.png'
+        ],
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus exercitationem maxime voluptatum at incidunt ullam deleniti autem, facere ipsum. Saepe nisi labore, fugiat atque possimus vitae deleniti iusto libero? Porro."',
+        rate: 5,
+        quanty: 2,
+        destach: true,
+        technicalDetails: {
+            marca: 'TWS w100T',
+            modelo: 'Modelo: W100T-BK',
+            porta: 'USB type C',
+            carg: 'cerca 7 horas (fones de ouvido) + 21 horas (Estojo de carregamento)'
+        }
+    },
     
 ]

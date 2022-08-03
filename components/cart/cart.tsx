@@ -1,6 +1,8 @@
+import Router from "next/router"
 import { useContext, useState } from "react"
-import { BsCart } from "react-icons/bs"
+import { BsHandbag } from "react-icons/bs"
 import { VscClose } from "react-icons/vsc"
+import { configs } from "../../configs/config"
 import { CartContext } from "../../context/Cart/CartContext"
 import { Body, Button } from "../ui"
 import { 
@@ -28,7 +30,7 @@ export const Cart = () => {
         <>
             <ListItem>
                 <Link href={''} onMouseEnter={()=> setShowCart(true)}>
-                    <BsCart size={23} color={'#000'}/>
+                    <BsHandbag size={23} color={'#000'}/>
                     {cart.products?.length}
                 </Link>
                 { showCart == true && (
@@ -41,7 +43,7 @@ export const Cart = () => {
                                         <ProductImage src={product?.image} width={50} height={50}/>
                                         <ContainerQuanty display={'flex'}>
                                             <Body size={'thin'} color={'success'}>
-                                                { product?.quanty} X { product?.price.toFixed(2)}
+                                                { product?.quanty} X { product?.priceDefault.toFixed(2)}
                                             </Body>
                                         </ContainerQuanty>
                                     </ContainerCart>
@@ -63,11 +65,11 @@ export const Cart = () => {
                                         <span>
                                         R$ { cart.subTotal.toFixed(2).toString().replace('.', ',') }
                                         </span>
-                                        <Link href="/cart">
-                                            <Button>
-                                                Checkout
-                                            </Button>
-                                        </Link>
+                    
+                                        <Button onClick={() => Router.push(`/checkout`)}>
+                                            Checkout
+                                        </Button>
+                                       
                                     </ContainerCheckout>
                                 </SubTotal>
                     </CartList>

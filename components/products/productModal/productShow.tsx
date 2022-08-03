@@ -1,27 +1,66 @@
-import { useContext } from "react"
+import Router from 'next/router'
+import { useContext, useEffect, useState } from "react"
 import { CartContext } from "../../../context/Cart/CartContext"
 import { ProductContext, ProductType } from "../../../context/Products/ProductContext"
 import { Container, Body, Heading, Button } from "../../ui"
 import { VscClose } from 'react-icons/vsc'
 import { DropDdown } from "../../ui/dropdown/Dropdown"
-import { ShowProduct, Close, ProductImage, ListPrice, Coin, Price, ButtonCart, Bluur, ContainerStars } from "./style"
-import { ProductTypeComponent } from "../../../types/Product"
-import { ProductCategory } from "../productGalery/productCategory"
+import { ProductGalery } from "../productGalery/ProductGalery"
 import { Stars } from "../../stars/Stars"
+
+import { 
+    ShowProduct, 
+    Close, 
+    ProductImage, 
+    ListPrice, 
+    Coin, 
+    Price, 
+    ButtonCart, 
+    Bluur, 
+    ContainerStars 
+} from "./style"
+import { BsFillArrowLeftSquareFill } from 'react-icons/bs'
+
+type incart = {
+    in: boolean,
+    quanty: number
+}
 
 export const ProductShow = (props: ProductType) => {
 
     const cart = useContext(CartContext)
+
     const Product = useContext(ProductContext)
-    const {id, name, description, image, price } = props
-    // const PriceReplaced = Product.price.toFixed(2).toString().replace('.', ',')
 
-    const ProductCloned = {...props}
+    const {id, name, description } = props
 
-    const HandleButtonCart = () => {
-        cart.addToCart(ProductCloned)
-        Product.showModalProduct(null!)
+    const [inCart, updateCart] = useState<incart>({in: false, quanty: 0})
+
+    const [quantyUpdate, setUpdate] = useState<any>(Product.product?.quanty)
+
+    const HandleButtonProduct = () => {
+        if(inCart.in === false){
+            const quanty = Product.quanty ? Product.quanty : 1
+            cart.addToCart(props, quanty)
+        }
+        else {
+            Router.push('/checkout')
+        }
     }
+
+
+    useEffect(() => {
+
+        const productCart = cart.checkCart(id)
+        if(productCart) {
+            if(productCart.quanty && productCart.in) {
+                updateCart(productCart)
+            }
+            setUpdate(quantyUpdate - inCart.quanty)
+
+        }
+    }, [cart])
+
     return (
         <>
         <ShowProduct>
@@ -29,7 +68,7 @@ export const ProductShow = (props: ProductType) => {
                 <VscClose onClick={() => Product.showModalProduct(null!)} />
             </Close>
             <Container display="flex" w={'100%'}>
-                <ProductCategory id={id}/>
+                <ProductGalery id={id}/>
                 <ProductImage src={Product.imageProduct} alt={name} height={505} />
             </Container>
             <Container padding="5%" mode="light" w={'100%'}>
@@ -41,19 +80,20 @@ export const ProductShow = (props: ProductType) => {
                 <ListPrice display={'flex'} radius={'sma'}>
                     <Coin>R$</Coin>
                     <Price level={3} color={"dark"} size={"large"}>
-                        {price}
+                        { Product.price }
                     </Price>
                 </ListPrice>
-                <DropDdown numItems={Product.product?.quanty} />
+                {inCart.in === false && (
+                    <DropDdown numItems={quantyUpdate} />
+                )}
                 <Container display={'flex'}>
-                    <ButtonCart onClick={HandleButtonCart}>
-                        Add to Cart
-                    </ButtonCart>
-                    <a href={`/${id}`} target='_blank'>
-                        <Button> 
-                            Ir para produto
-                        </Button>
-                    </a>
+                    <Button onClick={HandleButtonProduct}>
+                        {inCart.in === false ? 'Add to Cart' : 'Go to checkout'}
+                    </Button>
+                   
+                    <Button onClick={() => Router.push('/' + id)}> 
+                        Ir para produto
+                    </Button>
                 </Container>
             </Container>
         </ShowProduct>

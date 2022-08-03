@@ -12,7 +12,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const ButtonStyled = styled.button<ButtonProps>`
 
-    width: 120px;
     height: 40px;
 
     ${({
@@ -27,6 +26,13 @@ export const ButtonStyled = styled.button<ButtonProps>`
         font-weight: ${Theme.weights[weight]};
         font-size: ${Theme.sizes[size]};
         ${Theme.mode[mode]};
+        padding: 0 10px;
+        &:hover {
+            background: ${Theme.colors.primary};
+            color: #fff;
+            opacity: 0.6;
+            cursor: pointer;
+        }
     `}
 ;
     border: none;

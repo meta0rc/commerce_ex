@@ -24,7 +24,7 @@ export const List = styled.ul`
 export const ListName = styled.span` 
 `
 export const ListItem = styled.li`
-    margin: 15px;
+    margin: 15px !important;
     cursor: pointer;
 `
 export const iconEffect = {

@@ -10,11 +10,10 @@ export const GlobalStyles = createGlobalStyle`
     outline: none !important;
     text-decoration: none;
     list-style: none !important;
-    font-family: Open Sans !important; 
+    font-family: 'Montserrat', sans-serif;
     
     @media (max-width: 768px) {
-      h1, h2, h3 { 
-        text-align: center;
+  
       }
     }
   }

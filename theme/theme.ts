@@ -11,8 +11,11 @@ export const Theme = {
         none: ''
     },
     mode: { 
-        dark: `background: #181818; color: #fff;`,
-        light: `background: #fff; color: #181818;`
+        dark: `background: #000; color: #fff;`,
+        light: `background: #fff; color: #181818;`,
+        default: `background: #673ab7; color: #fff;`,
+        minimal: `background: none; color: #333; border: 1px solid #ccc !important;`,
+      
     },
     radius: { 
         sma: '3px',
@@ -33,7 +36,9 @@ export const Theme = {
         light: '300',
         normal: '400',
         regular: '500',
-        bold: '700' 
+        bold: '700',
+        xbold: '800',
+        xxbold: '900'
     },
     
     display: { 

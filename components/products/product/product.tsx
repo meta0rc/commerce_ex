@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState  } from "react"
+import { useContext  } from "react"
 import { ProductContext, ProductType } from "../../../context/Products/ProductContext"
 import { ProductShow } from "../productModal/productShow"
-import { ContainerProduct, ButtonProduct, ImageProduct } from "./style"
+import { ContainerProduct, ImageProduct } from "./style"
 
 export const ProductComponent = (props: ProductType) => {
 
-    const {id, price, name, image, quanty} = props
+    const {name, image} = props
     const Context = useContext(ProductContext)
 
     const showProduct = (product: ProductType) => {
@@ -17,7 +17,7 @@ export const ProductComponent = (props: ProductType) => {
             <ContainerProduct 
                 onClick={() => showProduct(props)}
                 key={'containerProduct' + name}>
-                <ImageProduct src={image} alt={name} width={200} key={'123123'} />
+                <ImageProduct src={image} alt={name} width={200} key={name} />
                 {/* <ButtonProduct key={name + price} mode={'light'} size={"xsmall"}>
                     { name }
                 </ButtonProduct> */}

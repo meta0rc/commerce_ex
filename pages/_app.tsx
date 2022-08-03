@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components';
-import { CartProdiver } from '../context/Cart/CartContext';
+import { CartProdiver } from '../context/Cart/CartProvider';
 import { ProductProvider } from '../context/Products/ProductProvider';
 import { GlobalStyles, Theme } from '../theme';
 

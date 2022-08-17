@@ -52,7 +52,7 @@ export const Destach = () => {
                             )
                         })}
                     </ListDetails>
-                    <Button mode="default" onClick={() => Router.push(`http://localhost:3000/${destach.id}`)}> 
+                    <Button mode="default" onClick={() => Router.push(`/${destach.id}`)}> 
                         Saiba mais 
                     </Button>
                 </Content>

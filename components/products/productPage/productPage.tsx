@@ -87,7 +87,7 @@ export const ProductPage = (props: ProductType) => {
                     </Button>
                 )}
           
-                    <Button onClick={() => Router.push('http://localhost:3000/checkout')}>
+                    <Button onClick={() => Router.push('/checkout')}>
                         Finalizar compra
                     </Button>
                 </Container>

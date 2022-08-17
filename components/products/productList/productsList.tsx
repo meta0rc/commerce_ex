@@ -4,6 +4,7 @@ import { Control, List, ContainerList, ListItem} from "./style"
 import { ProductContext } from "../../../context/Products/ProductContext"
 import { useContext, useRef, useState } from "react"
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs"
+import { ProductShow } from "../productModal/productShow"
 
 
 export const ProductList = () => {
@@ -48,7 +49,7 @@ export const ProductList = () => {
                 )})}
             </List>
         </ContainerList>
-
+        { Product.product && <ProductShow {...Product.product}/> }               
         </>
     )
 }

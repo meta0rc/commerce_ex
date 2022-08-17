@@ -3,7 +3,7 @@ import { CartContext } from "../../../context/Cart/CartContext"
 import { ProductContext, ProductType } from "../../../context/Products/ProductContext"
 import { Stars } from "../../stars/Stars"
 import { Container, Heading, Body, Button } from "../../ui"
-import { DropDdown } from "../../ui/dropdown/Dropdown"
+import { DropDdown } from "../dropdown/Dropdown"
 import { ProductGalery } from "../productGalery/ProductGalery"
 import { ProductImage, ListPrice, Price, Coin, ContainerStars } from "../productModal/style"
 import { ContainerPage } from './style'

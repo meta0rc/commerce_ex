@@ -4,7 +4,7 @@ import { CartContext } from "../../../context/Cart/CartContext"
 import { ProductContext, ProductType } from "../../../context/Products/ProductContext"
 import { Container, Body, Heading, Button } from "../../ui"
 import { VscClose } from 'react-icons/vsc'
-import { DropDdown } from "../../ui/dropdown/Dropdown"
+import { DropDdown } from "../dropdown/Dropdown"
 import { ProductGalery } from "../productGalery/ProductGalery"
 import { Stars } from "../../stars/Stars"
 
@@ -17,7 +17,8 @@ import {
     Price, 
     ButtonCart, 
     Bluur, 
-    ContainerStars 
+    ContainerStars,
+    ContainerButtons
 } from "./style"
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs'
 
@@ -47,7 +48,12 @@ export const ProductShow = (props: ProductType) => {
             Router.push('/checkout')
         }
     }
-
+    const close = () => {
+        if(window.innerWidth < 768){
+            window.scrollTo(0, 4000)
+        }
+        Product.showModalProduct(null!)
+    }
 
     useEffect(() => {
 
@@ -65,7 +71,7 @@ export const ProductShow = (props: ProductType) => {
         <>
         <ShowProduct>
             <Close>
-                <VscClose onClick={() => Product.showModalProduct(null!)} />
+                <VscClose onClick={close} />
             </Close>
             <Container display="flex" w={'100%'}>
                 <ProductGalery id={id}/>
@@ -86,15 +92,14 @@ export const ProductShow = (props: ProductType) => {
                 {inCart.in === false && (
                     <DropDdown numItems={quantyUpdate} />
                 )}
-                <Container display={'flex'}>
-                    <Button onClick={HandleButtonProduct}>
+                <ContainerButtons>
+                    <Button onClick={HandleButtonProduct} size={'thin'}> 
                         {inCart.in === false ? 'Add to Cart' : 'Go to checkout'}
                     </Button>
-                   
-                    <Button onClick={() => Router.push('/' + id)}> 
+                    <Button onClick={() => Router.push('/' + id)} size={'thin'}> 
                         Ir para produto
                     </Button>
-                </Container>
+                </ContainerButtons>
             </Container>
         </ShowProduct>
         <Bluur />

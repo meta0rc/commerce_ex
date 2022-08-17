@@ -47,6 +47,9 @@ export const ShowProduct = styled(Container)`
         height: auto;
         position: absolute;
         
+        h2 {
+            text-align: center;
+        }
         ${ProductImage} {
             margin: 0 auto;
             width: 50%;
@@ -96,4 +99,14 @@ export const ContainerStars = styled(Container)`
         justify-content: center;
     }
 
+`
+export const ContainerButtons = styled(Container)`
+    display: flex;
+    @media (max-width: 768px) {
+        justify-content: space-around;
+        button { 
+            font-size: auto !important;
+            width: 120px !important;
+        }
+    }
 `

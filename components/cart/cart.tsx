@@ -16,7 +16,8 @@ import {
     SubTotal, 
     Title, 
     ContainerCheckout,
-    Link
+    Link,
+    Items
 } from "./style"
 
 
@@ -24,13 +25,17 @@ export const Cart = () => {
 
     const cart = useContext(CartContext)
     const [showCart, setShowCart] = useState(false)
-
+    const onMouseCart = () => {
+        showCart === false ? setShowCart(true) : setShowCart(false)
+    }
     return (
         <>
             <ListItem>
-                <Link href={''} onMouseEnter={()=> setShowCart(true)}>
-                    <BsHandbag size={23} color={'#000'}/>
-                    {cart.products?.length}
+                <Link onMouseEnter={onMouseCart} onClick={onMouseCart}>
+                    <BsHandbag color={'#000'} size={23}/>
+                    <Items>
+                        {cart.products?.length}
+                    </Items>
                 </Link>
                 { showCart == true && (
                     <CartList onMouseLeave={() => setShowCart(false)}>

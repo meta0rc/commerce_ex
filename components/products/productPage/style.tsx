@@ -6,6 +6,9 @@ export const ContainerPage = styled(ShowProduct)`
     margin: 1% 5%;
     button {
         margin-right: 5px;
-        width: 200px;
+        @media (max-width: 500px) {
+            width: 100%;
+            margin: 3px 0 !important;
+        }
     }
 `

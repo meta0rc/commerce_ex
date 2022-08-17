@@ -3,6 +3,7 @@ import { Container } from "../ui"
 
 export const ListItem = styled.li`
     position: relative;
+    z-index: 9;
 `
 export const ContainerQuanty = styled(Container)`
     align-items: center;
@@ -33,6 +34,11 @@ export const CartList = styled.ul`
     z-index: 3;
     top: 50px;
     padding: 15px;
+    @media (max-width: 768px) {
+        right: 0;
+        width: 270px;
+        box-shadow: 0 0 3px;
+    }
 `
 export const ListItemCart = styled.li`
     border-bottom: 2px solid #ccc;
@@ -50,4 +56,9 @@ export const SubTotal = styled.div`
 `
 export const Title = styled.h3`
     margin: 10px 0;
+`
+export const Items = styled.span`
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
 `

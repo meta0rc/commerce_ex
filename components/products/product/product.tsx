@@ -9,6 +9,9 @@ export const ProductComponent = (props: ProductType) => {
     const Context = useContext(ProductContext)
 
     const showProduct = (product: ProductType) => {
+        if(window.innerWidth < 768){
+            window.scrollTo(0, 0)
+        }
         Context.showModalProduct(product)
     }
 
@@ -22,7 +25,7 @@ export const ProductComponent = (props: ProductType) => {
                     { name }
                 </ButtonProduct> */}
             </ContainerProduct>
-            { Context.product && <ProductShow {...Context.product}/> }
+           
         </>
     )
 }

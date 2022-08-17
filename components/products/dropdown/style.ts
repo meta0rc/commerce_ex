@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { Container } from "../container/Container"
-import { Body } from "../typography/Typography"
+import { Container } from "../../ui/container/Container"
+import { Body } from "../../ui/typography/Typography"
 
 export const ListContainer = styled(Container)`
     position: relative;

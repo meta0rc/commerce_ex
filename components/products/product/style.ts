@@ -15,4 +15,10 @@ export const ButtonProduct = styled(Button)`
     border: none;
     border-radius: 0;
 `
-export const ImageProduct = styled.img``
+export const ImageProduct = styled.img`
+    &:hover { 
+        cursor: pointer;
+        opacity: 0.6;
+        transition: 0.6s;
+    }
+`

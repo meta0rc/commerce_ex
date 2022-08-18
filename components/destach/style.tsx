@@ -27,7 +27,7 @@ export const ListItemDetails = styled.li`
 export const ContainerDestach = styled(Container)`
     width: 100%;
     display: flex;
-    background: ${props => props.theme.colors.dark};
+    background: ${props => props.theme.colors.light};
     ${MobileContainer}{
         display: none;
     }

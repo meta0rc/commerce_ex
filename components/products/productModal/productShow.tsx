@@ -77,7 +77,7 @@ export const ProductShow = (props: ProductType) => {
                 <ProductGalery id={id}/>
                 <ProductImage src={Product.imageProduct} alt={name} height={505} />
             </Container>
-            <Container padding="5%" mode="light" w={'100%'}>
+            <Container padding="0 5%" mode="light" w={'100%'}>
                 <Heading color="dark" level={2} size={'medium'}>{name}</Heading>
                 <ContainerStars display={'flex'}>
                     <Stars quanty={Product.products[Number(id)]?.rate} />

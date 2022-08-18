@@ -14,25 +14,29 @@ import {
 } from './style'
 import { Burger } from "./burger/burger"
 import { useState } from "react"
+import Router from "next/router"
 
 export const Header = () => {
     const [openMenu, setOpenMenu] = useState(false)
     return (
         <Container>
             <Logo />
-            
             <List active={openMenu}>
-                <ListItem>
+                <ListItem onClick={() => Router.push('/')}>
                     Home
                 </ListItem>
-                <ListItem>
+                <ListItem onClick={() => Router.push('/about')}>
                     About us
                 </ListItem>
-                <ListItem>
+                <ListItem onClick={() => Router.push('/products')}>
+                    
                     Shop
+                  
                 </ListItem>
-                <ListItem>
+                <ListItem onClick={() => Router.push('/contact')}>
+                    
                     Contact us
+                 
                 </ListItem>
                 <ContainerSearch>
                     <Search type="search"/>

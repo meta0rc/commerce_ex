@@ -103,10 +103,11 @@ export const ContainerStars = styled(Container)`
 export const ContainerButtons = styled(Container)`
     display: flex;
     @media (max-width: 768px) {
-        justify-content: space-around;
+        flex-wrap: wrap;
         button { 
-            font-size: auto !important;
-            width: 120px !important;
+            font-size: 13px !important;
+            width: 100% !important;
+            margin-bottom: 5px;
         }
     }
 `

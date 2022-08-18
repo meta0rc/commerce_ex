@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 import { FunctionComponent, useContext, useEffect } from "react"
+import { Footer } from "../components/common/footer/footer"
 import { Header } from "../components/common/header/header"
 import { ProductPage } from "../components/products/productPage/productPage"
 import { ProductContext, ProductType } from "../context/Products/ProductContext"
@@ -50,6 +51,7 @@ const Product: FunctionComponent<Product> = (props) => {
                 rate={rate}
                 quanty={quanty}
                 />
+                <Footer />
         </>
     )
 }

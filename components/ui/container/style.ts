@@ -37,4 +37,5 @@ export const Box = styled.div<DivType>`
         background: ${Theme.colors[background]};
         ${display ? Theme.display[display] : ''};
         ${mode ? Theme.mode[mode] : ''};
+        align-items: center;
     `}`

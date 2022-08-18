@@ -72,7 +72,8 @@ export const Products = [
             modelo: 'Modelo: W100T-BK',
             porta: 'USB type C',
             carg: 'cerca 7 horas (fones de ouvido) + 21 horas (Estojo de carregamento)'
-        }
+        },
+       
     },
     {
         id: 6,
@@ -92,7 +93,8 @@ export const Products = [
             modelo: 'Modelo: W100T-BK',
             porta: 'USB type C',
             carg: 'cerca 7 horas (fones de ouvido) + 21 horas (Estojo de carregamento)'
-        }
+        },
+        
     },
     {
         id: 7,
@@ -111,7 +113,8 @@ export const Products = [
             modelo: 'Modelo: W100T-BK',
             porta: 'USB type C',
             carg: 'cerca 7 horas (fones de ouvido) + 21 horas (Estojo de carregamento)'
-        }
+        },
+    
     },
     
 ]

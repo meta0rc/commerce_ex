@@ -34,10 +34,10 @@ export const CartList = styled.ul`
     z-index: 3;
     top: 50px;
     padding: 15px;
+    box-shadow: 0 0 3px;
     @media (max-width: 768px) {
-        right: 0;
+        right: -50px;
         width: 270px;
-        box-shadow: 0 0 3px;
     }
 `
 export const ListItemCart = styled.li`

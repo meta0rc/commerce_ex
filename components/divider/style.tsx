@@ -3,7 +3,7 @@ import { Container, Heading, Body } from "../ui"
 
 export const DividerContainer = styled(Container)`
     display: flex;
-    padding: 70px;
+    padding: ${(props: any) => props.padding ? props.padding : '70px'};
     align-items: center;
     h2 {
         width: 30%;

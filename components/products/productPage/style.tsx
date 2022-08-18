@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 export const ContainerPage = styled(ShowProduct)`
     position: initial;
+    height: auto;
     margin: 1% 5%;
     button {
         margin-right: 5px;

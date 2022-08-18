@@ -7,6 +7,7 @@ export type TextProps = {
     weight?: keyof typeof Theme.weights
     level?: 1 | 2 | 3 | 4 | 5 | 6
     margin?: string
+    onClick?: any
 }
 export const Body = styled('p').attrs<TextProps>(() => ({as: 'p'}))<TextProps>`
    ${({

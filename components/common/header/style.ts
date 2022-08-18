@@ -7,6 +7,11 @@ export const Container = styled.header`
     align-items: center;
     justify-content: space-between;
     padding: 20px 15px;
+    box-shadow: 0 0 3px #ccc;
+    background: #fff;
+    a {
+        color: #000;
+    }
 `
 export const ButtonSearch = styled.div`
     position: absolute;
@@ -39,7 +44,7 @@ export const List = styled.ul<Burger>`
         height: 100vh;
         background: #fff;
         box-shadow: 0 0 2px #ccc;
-        width: 250px;
+        width: 300px;
         right: ${props => props.active === true ? '0' : '-100%'};
         z-index: 5;
         top: 0;
@@ -57,6 +62,7 @@ export const ListIcons = styled.ul`
 export const ListItem = styled.li`
 
     margin: 0 10px;
+    cursor: pointer;
     @media(max-width: 768px){
         margin: 15px 0 !important;
     }
